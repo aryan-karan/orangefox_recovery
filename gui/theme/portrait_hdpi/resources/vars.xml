@@ -86,6 +86,7 @@
 		<variable name="tw_hidden_files" value="0" persist="1"/> 
 		<variable name="need_reboot" value="0" /> 
 		<variable name="fox_reboot_saveload_aromafm_check" value="0" /> 
+		<variable name="tw_crypto_user_id_list" value="init" /> <!-- requred to make list update -->
 		
 		<!-- Default values -->
 		<variable name="tw_hide_kb" value="0"/>
@@ -245,12 +246,15 @@
 		<variable name="bl_h3" value="432"/>
 		<variable name="bl_h4" value="576"/>
 		<variable name="bl_h5" value="720"/>
+		<variable name="bl_h6" value="864"/>
 		
 		<variable name="bl_fullscreen_h" value="%screen_min_cut%-384"/>
 		<variable name="bl_files_h" value="%screen_min_cut%-600"/>
 		<variable name="input_btn_list_y" value="674+%cutout_w%"/>
 
 		<variable name="down_menu_btn_y" value="%screen_h%-576"/>
+		<variable name="down_menu_btn2_y" value="%screen_h%-432"/>
+		<variable name="down_menu_btn2_caption_y" value="%screen_h%-448"/>
 		<variable name="down_menu_y" value="%screen_h%-1008"/>
 		
 		<!-- chmod -->

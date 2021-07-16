@@ -1,7 +1,7 @@
 /*
 	This file is part of TWRP/TeamWin Recovery Project.
 
-	Copyright (C) 2018-2020 OrangeFox Recovery Project
+	Copyright (C) 2018-2021 OrangeFox Recovery Project
 	This file is part of the OrangeFox Recovery Project.
 
 	TWRP is free software: you can redistribute it and/or modify
@@ -125,10 +125,20 @@ int main(int argc, char **argv)
   crash_counter = atoi(crash_prop_val) + 1;
   snprintf(crash_prop_val, sizeof(crash_prop_val), "%d", crash_counter);
   property_set("orangefox.crash_counter", crash_prop_val);
+
   property_set("ro.orangefox.boot", "1");
-  property_set("ro.orangefox.build", "orangefox");
   property_set("ro.orangefox.version", FOX_VERSION);
-  
+  property_set("ro.orangefox.type", FOX_BUILD_TYPE);
+  property_set("ro.orangefox.build", "orangefox");
+
+  #if SDK_VERSION == 23
+  TWFunc::Fox_Property_Set("ro.build.version.sdk", "23");
+  #endif
+
+  #ifdef OF_TARGET_DEVICES
+  property_set("ro.orangefox.target.devices", OF_TARGET_DEVICES);
+  #endif
+
   string fox_build_date = TWFunc::File_Property_Get ("/etc/fox.cfg", "FOX_BUILD_DATE");
   if (fox_build_date == "")
      {
@@ -380,8 +390,10 @@ int main(int argc, char **argv)
 	// Offer to decrypt if the device is encrypted
 	if (DataManager::GetIntValue(TW_IS_ENCRYPTED) != 0) {
 		LOGINFO("Is encrypted, do decrypt page first\n");
-		if (gui_startPage("decrypt", 1, 1) != 0) {
-			LOGERR("Failed to start decrypt GUI page.\n");
+	if (DataManager::GetIntValue(TW_IS_FBE))
+		DataManager::SetValue("tw_crypto_user_id", "0");
+	if (gui_startPage("decrypt", 1, 1) != 0) {
+		LOGERR("Failed to start decrypt GUI page.\n");
 		} else {
 			// Check for and load custom theme if present
 			TWFunc::check_selinux_support();
@@ -403,8 +415,7 @@ int main(int argc, char **argv)
 	}
 
 	// Fixup the RTC clock on devices which require it
-	if (crash_counter == 0)
-		TWFunc::Fixup_Time_On_Boot();
+	if (crash_counter == 0) TWFunc::Fixup_Time_On_Boot();
 
 	// Read the settings file
 	TWFunc::Update_Log_File();
