@@ -382,6 +382,10 @@ ifeq ($(OF_USE_LOCKSCREEN_BUTTON),1)
     LOCAL_CFLAGS += -DOF_USE_LOCKSCREEN_BUTTON
 endif
 
+ifeq ($(OF_DISABLE_EXTRA_ABOUT_PAGE),1)
+    LOCAL_CFLAGS += -DOF_DISABLE_EXTRA_ABOUT_PAGE=1
+endif
+
 # disable by default the USB storage button on the "Mount" menu
 ifneq ($(OF_ENABLE_USB_STORAGE),1)
     TW_NO_USB_STORAGE := true
@@ -391,28 +395,6 @@ endif
 ifeq ($(OF_RUN_POST_FORMAT_PROCESS),1)
     LOCAL_CFLAGS += -DOF_RUN_POST_FORMAT_PROCESS='"1"'
 endif
-
-# process these here instead of OrangeFox.sh
-ifeq ($(OF_DISABLE_EXTRA_ABOUT_PAGE),1)
-    LOCAL_CFLAGS += -DOF_DISABLE_EXTRA_ABOUT_PAGE=1
-endif
-
-ifeq ($(FOX_DISABLE_APP_MANAGER),1)
-    LOCAL_CFLAGS += -DFOX_DISABLE_APP_MANAGER='"1"'
-endif
-
-ifeq ($(OF_NO_SPLASH_CHANGE),1)
-    LOCAL_CFLAGS += -DOF_NO_SPLASH_CHANGE='"1"'
-endif
-
-ifeq ($(FOX_DELETE_MAGISK_ADDON),1)
-    LOCAL_CFLAGS += -DFOX_DELETE_MAGISK_ADDON='"1"'
-endif
-
-ifeq ($(OF_USE_GREEN_LED),0)
-    LOCAL_CFLAGS += -DOF_USE_GREEN_LED='"0"'
-endif
-#
 
 ifeq ($(TW_USE_TOOLBOX), true)
     LOCAL_CFLAGS += -DTW_USE_TOOLBOX='"1"'
@@ -453,7 +435,7 @@ LOCAL_MODULE := recovery
 RECOVERY_API_VERSION := 3
 RECOVERY_FSTAB_VERSION := 2
 LOCAL_CFLAGS += -DRECOVERY_API_VERSION=$(RECOVERY_API_VERSION)
-LOCAL_CFLAGS += -Wno-unused-parameter -Wno-unused-function -Wno-format-extra-args -Wno-unused-result
+LOCAL_CFLAGS += -Wno-unused-parameter -Wno-unused-function -Wno-unused-variable -Wno-format-extra-args
 LOCAL_CLANG := true
 ifeq ($(TARGET_ARCH), arm)
   LOCAL_CFLAGS += -Wno-format
@@ -1030,7 +1012,7 @@ endif
 # ===============================
 include $(CLEAR_VARS)
 LOCAL_CLANG := true
-LOCAL_CFLAGS := -Wall -Werror -Wno-unused-parameter -Wno-unused-function
+LOCAL_CFLAGS := -Wall -Werror -Wno-unused-parameter -Wno-unused-function -Wno-unused-variable
 LOCAL_CFLAGS += -D_XOPEN_SOURCE -D_GNU_SOURCE
 
 LOCAL_MODULE_TAGS := optional
@@ -1055,7 +1037,7 @@ include $(BUILD_SHARED_LIBRARY)
 # =============================== (required to fix build errors in 8.1 due to use by tests)
 include $(CLEAR_VARS)
 LOCAL_CLANG := true
-LOCAL_CFLAGS := -Wall -Werror -Wno-unused-parameter -Wno-unused-function
+LOCAL_CFLAGS := -Wall -Werror -Wno-unused-parameter -Wno-unused-function -Wno-unused-variable
 LOCAL_CFLAGS += -D_XOPEN_SOURCE -D_GNU_SOURCE
 
 LOCAL_MODULE_TAGS := optional

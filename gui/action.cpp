@@ -71,7 +71,6 @@ static string zip_queue[10];
 static int zip_queue_index;
 pid_t sideload_child_pid;
 extern GUITerminal* term;
-extern std::vector<users_struct> Users_List;
 
 static void *ActionThread_work_wrapper(void *data);
 
@@ -141,16 +140,11 @@ void ActionThread::threadActions(GUIAction * act)
   pthread_mutex_lock(&m_act_lock);
   if (m_thread_running)
     {
-       pthread_mutex_unlock(&m_act_lock);
-       if (! Hide_Reboot_Kludge_Fix(act->mActions[0].mFunction)) 
-       {
-	  if (act->mActions[0].mFunction == "adb")
-      	      LOGINFO
-      	      ("Another threaded action is already running -- not running %lu actions starting with '%s'\n", act->mActions.size(), act->mActions[0].mFunction.c_str());	
-	  else
-      	      LOGERR
-	      ("Another threaded action is already running -- not running %lu actions starting with '%s'\n", act->mActions.size(), act->mActions[0].mFunction.c_str());
-       }
+      pthread_mutex_unlock(&m_act_lock);
+     if (! Hide_Reboot_Kludge_Fix(act->mActions[0].mFunction))
+      LOGERR
+	("Another threaded action is already running -- not running %u actions starting with '%s'\n",
+	 act->mActions.size(), act->mActions[0].mFunction.c_str());
     }
   else
     {
@@ -776,18 +770,8 @@ void GUIAction::sha512sum(char *string, char outputBuffer[129])
 
 int GUIAction::check_and_reload(std::string arg __unused)
 {
-  string mode = DataManager::GetStrValue("of_decrypt_from_menu");
-  if (mode == "0") // on startup
+  if (!DataManager::GetIntValue("of_decrypt_from_menu")) //int == 0
     return 0;
-
-  if (DataManager::GetStrValue("of_decrypt_from_menu") == "2") { // on FBE user decrypt
-    string user = DataManager::GetStrValue("tw_crypto_user_id");
-    if (user != "0") { // 
-      DataManager::SetValue("tw_file_location1", "/data/media/" + user);
-      gui_changePage("filemanagerlist");
-      return 0;
-    }
-  }
   
   if (TWFunc::Path_Exists(Fox_Home + "/.theme") || TWFunc::Path_Exists(Fox_Home + "/.navbar")) {
     PageManager::RequestReload();
@@ -1878,6 +1862,7 @@ int GUIAction::partitionsd(std::string arg __unused)
 
   if (simulate)
     {
+      TWPartition *SDCard = PartitionManager.Find_Partition_By_Path(DataManager::GetCurrentPartPath());
       LOGINFO("DEBUG: Selected partition: %s\n", DataManager::GetCurrentPartPath().c_str());
       simulate_progress_bar();
     }
@@ -2112,39 +2097,24 @@ int GUIAction::checkbackupname(std::string arg __unused)
 
 int GUIAction::decrypt(std::string arg __unused)
 {
-	int op_status = 0;
+  int op_status = 0;
 
-	operation_start("Decrypt");
-	if (simulate) {
-		simulate_progress_bar();
-	} else {
-		string Password;
-		string userID;
-		DataManager::GetValue("tw_crypto_password", Password);
+  operation_start("Decrypt");
+  if (simulate)
+    {
+      simulate_progress_bar();
+    }
+  else
+    {
+      string Password;
+      DataManager::GetValue("tw_crypto_password", Password);
+      op_status = PartitionManager.Decrypt_Device(Password);
+      if (op_status != 0)
+	op_status = 1;
+      else
+	{
 
-		if (DataManager::GetIntValue(TW_IS_FBE)) {  // for FBE
-			DataManager::GetValue("tw_crypto_user_id", userID);
-			if (userID != "") {
-				op_status = PartitionManager.Decrypt_Device(Password, atoi(userID.c_str()));
-				if (userID != "0") {
-					if (op_status != 0)
-						op_status = 1;
-					operation_end(op_status);
-	          		return 0;
-				}
-			} else {
-				LOGINFO("User ID not found\n");
-				op_status = 1;
-			}
-		::sleep(1);
-		} else {  // for FDE
-			op_status = PartitionManager.Decrypt_Device(Password);
-		}
-
-		if (op_status != 0)
-			op_status = 1;
-		else {
-			DataManager::SetValue(TW_IS_ENCRYPTED, 0);
+	  DataManager::SetValue(TW_IS_ENCRYPTED, 0);
 
 	  int has_datamedia;
 
@@ -2870,6 +2840,8 @@ int GUIAction::cmdf(std::string arg, std::string file)
 {
   char buff[1024];
   sprintf(buff, gui_parse_text(arg).c_str(), file.c_str());
+
+   int op_status = 0;
   string cmdpath, command;
 
   //begin terminal
@@ -3001,7 +2973,6 @@ int GUIAction::changeterminal(std::string arg) {
 	}
 	if (term != NULL && !arg.empty()) {
 		DataManager::SetValue("tw_terminal_location", arg);
-		gui_changePage("terminal"); // this seems to be needed
 		if (term->status()) {
 			for (uint8_t iter = 0; iter < cmd.size(); iter++)
 				term->NotifyCharInput(cmd.at(iter));
