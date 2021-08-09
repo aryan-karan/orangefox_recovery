@@ -2390,7 +2390,7 @@ void TWFunc::Welcome_Message(void)
     gui_print("[Platform]  : %s\n", DataManager::GetStrValue(FOX_COMPATIBILITY_DEVICE).c_str());
     gui_print("[Release]   : %s\n", FOX_BUILD);
     gui_print("[Codebase]  : %s, %s\n", Fox_Property_Get("ro.build.version.sdk").c_str(), FOX_CURRENT_DEV_STR);
-    gui_print("[Build date]: %s\n", DataManager::GetStrValue("$(date)").c_str());
+    gui_print("[Build date]: %s\n", DataManager::GetStrValue("ARYAN_BUILD_DATE").c_str());
     
     if (FOX_BUILD == "Unofficial")
       gui_print_color("warning", "[Build type]: Unofficial\n");
