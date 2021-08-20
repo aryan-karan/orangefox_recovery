@@ -251,6 +251,7 @@
 		<variable name="bl_fullscreen_h" value="%screen_min_cut%-384"/>
 		<variable name="bl_files_h" value="%screen_min_cut%-600"/>
 		<variable name="input_btn_list_y" value="674+%cutout_w%"/>
+		<variable name="input_btn_list_yb" value="1434+%cutout_w%"/>
 
 		<variable name="down_menu_btn_y" value="%screen_h%-576"/>
 		<variable name="down_menu_btn2_y" value="%screen_h%-432"/>
@@ -385,6 +386,7 @@
 		<variable name="ab0_y" value="84+%cutout_w%"/>
 		<variable name="ab_y" value="156+%cutout_w%"/>
 		<variable name="ab2_y" value="324+%cutout_w%"/>
+		<variable name="ab2_yk" value="1084+%cutout_w%"/>
 		<variable name="ab3_y" value="540+%cutout_w%"/>
 		<variable name="ab_btn1_x" value="996"/>
 		<variable name="ab_btn2_x" value="852"/>
@@ -393,8 +395,11 @@
 		<variable name="ab_bc_y" value="115+%cutout_w%"/>
 		<variable name="ab_bc_search_y" value="128+%cutout_w%"/>
 		<variable name="ab_bc2_y" value="282+%cutout_w%"/>
+		<variable name="ab_bc2_yk" value="1042+%cutout_w%"/>
 		<variable name="ab_bc3_y" value="500+%cutout_w%"/>
+		<variable name="ab_hk" value="1000+%cutout_w%"/>
 		<variable name="ab_h" value="240+%cutout_w%"/>
+		
 		<variable name="ab_ex_h" value="456+%cutout_w%"/>
 		<variable name="row_ab_ex_y" value="456+%cutout_w%"/>
 		<variable name="ab_btn_h" value="168"/>
@@ -433,20 +438,35 @@
 		<!-- Bottom buttons -->
 		<variable name="row_btn_y" value="%screen_h%-450"/>
 		<variable name="row_btn1_y" value="%screen_h%-300"/>
+		<variable name="row_btn1_yk" value="260+%cutout_w%"/>
 		<variable name="row_btn2_y" value="%screen_h%-579"/>
 		<variable name="row_btn3_y" value="%screen_h%-729"/>
 		<variable name="btn_raised_left_x" value="48"/>
 		<variable name="btn_raised_right_x" value="1032"/>
+
+		<variable name="pattern_aryan" value="300+%row_btn1_yk%"/>
+		<variable name="pattern_r1" value="940+%pattern_aryan%"/>
+		<variable name="pattern_r2" value="60+%pattern_r1%"/>
+		<variable name="pattern_r3" value="60+%pattern_r2%"/>
+		<variable name="pattern_r4" value="60+%pattern_r3%"/>
 		
 		<!-- Progress -->
 		<variable name="progressbar_x" value="0"/>
 		<variable name="progressbar_y" value="456+%cutout_w%"/>
 		
 		<!-- Keyboard -->
-		<variable name="keyboard_y" value="%screen_h%-788"/>
-		<variable name="keyboard_terminal_y" value="%screen_h%-884"/>
-		<variable name="keyboard_num_y" value="%screen_h%-900"/>
-		<variable name="keyboard_term_num_y" value="%screen_h%-992"/>
+		<variable name="keyboard_yf" value="%screen_h%-788"/>
+		<variable name="keyboard_num_yf" value="%screen_h%-900"/>
+		
+		<!-- Keyboard Upscaled -->
+		<variable name="keyboard_y" value="240+%cutout_w%"/>
+		<variable name="keyboard_y96" value="96+%keyboard_y%"/>
+		<variable name="keyboard_y212" value="212+%keyboard_y%"/>
+		<variable name="keyboard_y116" value="116+%keyboard_y%"/>
+		
+		<variable name="keyboard_terminal_y" value="%keyboard_y%"/>
+		<variable name="keyboard_num_y" value="%keyboard_y%"/>
+		<variable name="keyboard_term_num_y" value="116+%keyboard_terminal_y%"/>
 		
 		<!-- Input fields -->
 		<variable name="input_encr_width" value="696"/>
@@ -462,7 +482,9 @@
 		<variable name="console_action_height_big" value="%prep%-552"/>
 		<variable name="console_action_height_fm" value="%screen_min_cut%-696"/>
 		<variable name="console_y" value="504+%cutout_w%"/>
-		<variable name="terminal_y" value="280+%cutout_w%"/>
+		<variable name="terminal_y" value="240+%cutout_w%"/>
+		<variable name="terminal_y0" value="736+%terminal_y%"/>
+		<variable name="terminal_y9" value="852+%terminal_y%"/>
 		<variable name="terminal_width" value="1032"/>
 		<variable name="terminal_height" value="%screen_min_cut%-1210"/>
 		<variable name="terminal_num_height" value="%screen_min_cut%-1322"/>
@@ -547,27 +569,41 @@
 		<variable name="row0_y" value="240+%cutout_w%"/>
 		<variable name="row0_a_y" value="270+%cutout_w%"/>
 		<variable name="row1_1_y" value="300+%cutout_w%"/>
+		<variable name="row1_1_yp" value="1060+%cutout_w%"/>
 		<variable name="row1_1a_y" value="330+%cutout_w%"/>
 		<variable name="row1_2_y" value="360+%cutout_w%"/>
+		<variable name="row1_2_yb" value="1120+%cutout_w%"/>
 		<variable name="row1_2a_y" value="390+%cutout_w%"/>
 		<variable name="row1_3_y" value="420+%cutout_w%"/>
+		<variable name="row1_3_yp" value="1180+%cutout_w%"/>
 		<variable name="row1_3a_y" value="450+%cutout_w%"/>
+		<variable name="row1_3a_yk" value="1210+%cutout_w%"/>
 		<variable name="row2_1_y" value="480+%cutout_w%"/>
+		<variable name="row2_1_yp" value="1240+%cutout_w%"/>
 		<variable name="row2_1a_y" value="510+%cutout_w%"/>
+		<variable name="row2_1a_yb" value="l270"/>
 		<variable name="row2_2_y" value="540+%cutout_w%"/>
+		<variable name="row2_2_yd" value="1300+%cutout_w%"/>
 		<variable name="row2_2a_y" value="570+%cutout_w%"/>
+		<variable name="row2_2a_yb" value="1330+%cutout_w%"/>
 		<variable name="row2_3_y" value="600+%cutout_w%"/>
+		<variable name="row2_3_yb" value="1360+%cutout_w%"/>
 		<variable name="row2_3a_y" value="630+%cutout_w%"/>
+		<variable name="row2_3a_yb" value="1390+%cutout_w%"/>
 		<variable name="row3_1_y" value="660+%cutout_w%"/>
+		<variable name="row3_1_yb" value="1420+%cutout_w%"/>
 		<variable name="row3_1a_y" value="690+%cutout_w%"/>
 		<variable name="row3_2_y" value="720+%cutout_w%"/>
+		<variable name="row3_2_yp" value="1480+%cutout_w%"/>
 		<variable name="row3_2a_y" value="750+%cutout_w%"/>
 		<variable name="row3_3_y" value="780+%cutout_w%"/>
-		<variable name="row3_3a_y" value="810+%cutout_w%"/>
+		<variable name="row3_3a_y" value="940+%cutout_w%"/>
 		<variable name="row4_1_y" value="840+%cutout_w%"/>
 		<variable name="row4_1a_y" value="870+%cutout_w%"/>
+		<variable name="row4_1a_yd" value="1630+%cutout_w%"/>
 		<variable name="row4_2_y" value="900+%cutout_w%"/>
 		<variable name="row4_2a_y" value="930+%cutout_w%"/>
+		<variable name="row4_2a_yd" value="1690+%cutout_w%"/>
 		<variable name="row4_3_y" value="960+%cutout_w%"/>
 		<variable name="row4_3a_y" value="990+%cutout_w%"/>
 		<variable name="row5_1_y" value="1020+%cutout_w%"/>

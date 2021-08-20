@@ -277,6 +277,7 @@
 
 		<page name="files_mkdir">
 			<template name="base_ex_key"/>
+			<template name="keyboardtemplate"/>
 
 			<text style="text_ab_title">
 				<placement x="%col1_x_indent%" y="%ab_bc_y%"/>
@@ -284,22 +285,22 @@
 			</text>
 
 			<text style="text_ab_title">
-				<placement x="%col1_x_indent%" y="%row1_2_y%" placement="2"/>
+				<placement x="%col1_x_indent%" y="%row1_2_yb%" placement="2"/>
 				<text>{@fm_mkdir}</text>
 			</text>
 
 			<text style="text_ab_subtitle_lim">
-				<placement x="%col1_x_indent%" y="%row1_2_y%"/>
+				<placement x="%col1_x_indent%" y="%row1_2_yb%"/>
 				<text>{@in} %tw_file_location1%</text>
 			</text>
 
 			<text style="caption_hl">
-				<placement x="%col1_x_caption%" y="%row2_1a_y%"/>
+				<placement x="%col1_x_caption%" y="1270"/>
 				<text>{@fm_mkdir_folder}</text>
 			</text>
 
 			<input>
-				<placement x="%col1_x_caption%" y="%row2_2a_y%" w="%input_w%" h="%input_height%"/>
+				<placement x="%col1_x_caption%" y="%row2_2a_yb%" w="%input_w%" h="%input_height%"/>
 				<text>%tw_filemanager_rename%</text>
 				<data name="mkdir_folder"/>
 				<restrict minlen="1" maxlen="32" allow="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-_.{}[]() " />
@@ -312,7 +313,7 @@
 			</input>
 
 			<fill color="%accent%">
-				<placement x="%col1_x_caption%" y="%row2_3a_y%" w="%input_w%" h="%input_line_height%" placement="1"/>
+				<placement x="%col1_x_caption%" y="%row2_3a_yb%" w="%input_w%" h="%input_line_height%" placement="1"/>
 			</fill>
 
 			<template name="gestures_key"/>
@@ -1493,6 +1494,7 @@
 
 		<page name="filemanagerrenamefile">
 			<template name="base_ex_key"/>
+			<template name="keyboardtemplate"/>
 
 			<text style="text_ab_title">
 				<placement x="%col1_x_indent%" y="%ab_bc_y%"/>
@@ -1500,22 +1502,22 @@
 			</text>
 
 			<text style="text_ab_title">
-				<placement x="%col1_x_indent%" y="%row1_2_y%" placement="2"/>
+				<placement x="%col1_x_indent%" y="%row1_2_yb%" placement="2"/>
 				<text>{@fm_rename_hdr}</text>
 			</text>
 
 			<text style="text_ab_subtitle_lim">
-				<placement x="%col1_x_indent%" y="%row1_2_y%"/>
+				<placement x="%col1_x_indent%" y="%row1_2_yb%"/>
 				<text>%tw_filename1%</text>
 			</text>
 
 			<text style="caption_hl">
-				<placement x="%col1_x_caption%" y="%row2_1a_y%"/>
+				<placement x="%col1_x_caption%" y="1270"/>
 				<text>{@name}</text>
 			</text>
 
 			<input>
-				<placement x="%col1_x_caption%" y="%row2_2a_y%" w="%input_w%" h="%input_height%"/>
+				<placement x="%col1_x_caption%" y="%row2_2a_yb%" w="%input_w%" h="%input_height%"/>
 				<text>%tw_filemanager_rename%</text>
 				<data name="tw_filemanager_rename"/>
 				<restrict minlen="1" maxlen="64" allow="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-_.{}[]() "/>
@@ -1527,7 +1529,7 @@
 			</input>
 
 			<fill color="%accent%">
-				<placement x="%col1_x_caption%" y="%row2_3a_y%" w="%input_w%" h="%input_line_height%" placement="1"/>
+				<placement x="%col1_x_caption%" y="%row2_3a_yb%" w="%input_w%" h="%input_line_height%" placement="1"/>
 			</fill>
 
 			<template name="gestures_key"/>
@@ -1545,6 +1547,7 @@
 
 		<page name="filemanagerrenamefolder">
 			<template name="base_ex_key"/>
+			<template name="keyboardtemplate"/>
 
 			<text style="text_ab_title">
 				<placement x="%col1_x_indent%" y="%ab_bc_y%"/>
@@ -1552,22 +1555,22 @@
 			</text>
 
 			<text style="text_ab_title">
-				<placement x="%col1_x_indent%" y="%row1_2_y%" placement="2"/>
+				<placement x="%col1_x_indent%" y="%row1_2_yb%" placement="2"/>
 				<text>{@fm_rename_hdr}</text>
 			</text>
 
 			<text style="text_ab_subtitle_lim">
-				<placement x="%col1_x_indent%" y="%row1_2_y%"/>
+				<placement x="%col1_x_indent%" y="%row1_2_yb%"/>
 				<text>%tw_filename1%</text>
 			</text>
 
 			<text style="caption_hl">
-				<placement x="%col1_x_caption%" y="%row2_1a_y%"/>
+				<placement x="%col1_x_caption%" y="1270"/>
 				<text>{@name}</text>
 			</text>
 
 			<input>
-				<placement x="%col1_x_caption%" y="%row2_2a_y%" w="%input_w%" h="%input_height%"/>
+				<placement x="%col1_x_caption%" y="%row2_2a_yb%" w="%input_w%" h="%input_height%"/>
 				<text>%tw_filemanager_rename%</text>
 				<data name="tw_filemanager_rename"/>
 				<restrict minlen="1" maxlen="64" allow="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-_.{}[]() "/>
@@ -1579,7 +1582,7 @@
 			</input>
 
 			<fill color="%accent%">
-				<placement x="%col1_x_caption%" y="%row2_3a_y%" w="%input_w%" h="%input_line_height%" placement="1"/>
+				<placement x="%col1_x_caption%" y="%row2_3a_yb%" w="%input_w%" h="%input_line_height%" placement="1"/>
 			</fill>
 
 			<template name="gestures_key"/>
@@ -1759,6 +1762,7 @@
 			<template name="body_num"/>
 			<template name="ab_ex"/>
 			<template name="statusbarinfo"/>
+			<template name="keyboardnum"/>
 
 			<action>
 				<action function="set">tw_filemanager_rename=%tw_filemanager_rename%</action>
@@ -1770,12 +1774,12 @@
 			</text>
 
 			<text style="text_ab_title">
-				<placement x="%col1_x_indent%" y="%row1_2_y%" placement="2"/>
+				<placement x="%col1_x_indent%" y="%row1_2_yb%" placement="2"/>
 				<text>{@fm_set_perms_hdr}</text>
 			</text>
 
 			<text style="text_ab_subtitle_lim">
-				<placement x="%col1_x_indent%" y="%row1_2_y%"/>
+				<placement x="%col1_x_indent%" y="%row1_2_yb%"/>
 				<text>%tw_filename1%</text>
 			</text>
 
@@ -1791,12 +1795,12 @@
 			</image>
 
 			<text style="caption_hl">
-				<placement x="%col1_x_caption%" y="%row2_1a_y%"/>
+				<placement x="%col1_x_caption%" y="1270"/>
 				<text>{@fm_perms}</text>
 			</text>
 			
 			<input>
-				<placement x="%col1_x_caption%" y="%row2_2a_y%" w="%input_w%" h="%input_height%"/>
+				<placement x="%col1_x_caption%" y="%row2_2a_yb%" w="%input_w%" h="%input_height%"/>
 				<text>%tw_filemanager_rename%</text>
 				<data name="tw_filemanager_rename"/>
 				<restrict minlen="3" maxlen="4" allow="01234567"/>
@@ -1807,11 +1811,11 @@
 			</input>
 
 			<fill color="%accent%">
-				<placement x="%col1_x_caption%" y="%row2_3a_y%" w="%input_w%" h="%input_line_height%" placement="1"/>
+				<placement x="%col1_x_caption%" y="%row2_3a_yb%" w="%input_w%" h="%input_line_height%" placement="1"/>
 			</fill>
 
 			<listbox style="btn_list">
-				<placement x="0" y="%input_btn_list_y%" w="%screen_w%" h="%bl_h2%"/>
+				<placement x="0" y="%input_btn_list_yb%" w="%screen_w%" h="%bl_h2%"/>
 				<listitem name="{@fm_chmod644_btn}">
 					<icon res="bs_btn_chmod"/>
 					<action function="set">tw_filemanager_rename=0644</action>

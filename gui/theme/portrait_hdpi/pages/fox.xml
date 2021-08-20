@@ -373,12 +373,12 @@
 			</text>
 
 			<text style="caption">
-				<placement x="%col1_x_caption%" y="%row2_1_y%"/>
+				<placement x="%col1_x_caption%" y="%row2_1_yp%"/>
 				<text>{@dbg_func}</text>
 			</text>
 
 			<listbox>
-				<placement x="0" y="%row2_2_y%" w="%screen_w%" h="%lb_l3%"/>
+				<placement x="0" y="%row2_2_yd%" w="%screen_w%" h="%lb_l3%"/>
 				<data name="dbg"/>
 				<listitem name="{@dbg_page}">page</listitem>
 				<listitem name="{@dbg_set}">set</listitem>
@@ -386,12 +386,12 @@
 			</listbox>
 			
 			<text style="caption">
-				<placement x="%col1_x_caption%" y="%row4_1a_y%"/>
+				<placement x="%col1_x_caption%" y="%row4_1a_yd%"/>
 				<text>{@cust_oth}</text>
 			</text>
 
 			<listbox style="settingslist">
-				<placement x="0" y="%row4_2a_y%" w="%screen_w%" h="%lb_l2%"/>
+				<placement x="0" y="%row4_2a_yd%" w="%screen_w%" h="%lb_l2%"/>
 				<listitem name="{@simact_chk}">
 					<data variable="tw_simulate_actions"/>
 				</listitem>
@@ -402,12 +402,12 @@
 			</listbox>
 
 			<text style="caption_hl">
-				<placement x="%col1_x_caption%" y="%row1_1_y%"/>
+				<placement x="%col1_x_caption%" y="%row1_1_yp%"/>
 				<text>{@dbg_act}</text>
 			</text>
 
 			<input>
-				<placement x="%col1_x_caption%" y="%row1_2_y%" w="%input_w%" h="%input_height%"/>
+				<placement x="%col1_x_caption%" y="%row1_2_yb%" w="%input_w%" h="%input_height%"/>
 				<text>%dbg_b%</text>
 				<data name="dbg_b"/>
 				<restrict minlen="0" maxlen="512"/>
@@ -416,7 +416,7 @@
 			</input>
 
 			<fill color="%accent%">
-				<placement x="%col1_x_caption%" y="%row1_3_y%" w="%input_w%" h="%input_line_height%" placement="1"/>
+				<placement x="%col1_x_caption%" y="%row1_3_yp%" w="%input_w%" h="%input_line_height%" placement="1"/>
 			</fill>
 
 			<template name="gestures_key"/>
@@ -441,12 +441,12 @@
 			</text>
 
 			<text style="caption_hl">
-				<placement x="%col1_x_caption%" y="%row1_1_y%"/>
+				<placement x="%col1_x_caption%" y="%row1_1_yp%"/>
 				<text>{@dbg_func}</text>
 			</text>
 
 			<input>
-				<placement x="%col1_x_caption%" y="%row1_2_y%" w="%input_w%" h="%input_height%"/>
+				<placement x="%col1_x_caption%" y="%row1_2_yb%" w="%input_w%" h="%input_height%"/>
 				<text>%dbg%</text>
 				<data name="dbg"/>
 				<restrict minlen="1" maxlen="32" allow="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_="/>
@@ -454,7 +454,7 @@
 			</input>
 
 			<fill color="%accent%">
-				<placement x="%col1_x_caption%" y="%row1_3_y%" w="%input_w%" h="%input_line_height%" placement="1"/>
+				<placement x="%col1_x_caption%" y="%row1_3_yp%" w="%input_w%" h="%input_line_height%" placement="1"/>
 			</fill>
 
 			<template name="gestures_key"/>
@@ -479,12 +479,12 @@
 			</text>
 
 			<text style="caption_hl">
-				<placement x="%col1_x_caption%" y="%row1_1_y%"/>
-				<text>Set scaling (eg. 0.5)</text>
+				<placement x="%col1_x_caption%" y="%row1_1_yp%"/>
+				<text>Set scaling (eg. 0.5, 0.67, 0.6676)</text>
 			</text>
 
 			<input>
-				<placement x="%col1_x_caption%" y="%row1_2_y%" w="%input_w%" h="%input_height%"/>
+				<placement x="%col1_x_caption%" y="%row1_2_yb%" w="%input_w%" h="%input_height%"/>
 				<text>%scaling_dbg%</text>
 				<data name="scaling_dbg"/>
 				<restrict minlen="1" maxlen="6" allow="1234567890."/>
@@ -492,7 +492,7 @@
 			</input>
 
 			<fill color="%accent%">
-				<placement x="%col1_x_caption%" y="%row1_3_y%" w="%input_w%" h="%input_line_height%" placement="1"/>
+				<placement x="%col1_x_caption%" y="%row1_3_yp%" w="%input_w%" h="%input_line_height%" placement="1"/>
 			</fill>
 
 			<template name="gestures_key"/>

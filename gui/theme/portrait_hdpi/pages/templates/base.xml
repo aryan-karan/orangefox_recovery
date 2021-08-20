@@ -331,6 +331,16 @@
 			<template name="navbar_console"/>
 			<template name="navbar_key"/>
 		</template>
+
+		<template name="body_key0">
+			<background color="%background%"/>
+			<template name="keys"/>
+			<template name="keyboardtemplatef"/>
+			<!-- <template name="navbar_bkg"/> -->
+			<template name="navbar_home"/>
+			<template name="navbar_console"/>
+			<template name="navbar_key"/>
+		</template>
 		
 		<template name="body_num">
 			<background color="%background%"/>

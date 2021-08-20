@@ -47,12 +47,12 @@
 			<template name="navbar_bkg_nobg"/>
 
 			<text style="text_ab_subtitle">
-				<placement x="%center_x%" y="%ab_bc_double_d_y%" placement="5"/>
+				<placement x="%col1_x%" y="%ab_bc_double_d_y%"/>
 				<text>%tw_storage_display_name% (%tw_storage_free_size%{@mbyte})</text>
 			</text>
 
 			<text style="text_ab_title">
-				<placement x="%center_x%" y="%ab_bc_double_u_y%" placement="5"/>
+				<placement x="%col1_x%" y="%ab_bc_double_u_y%"/>
 				<text>{@restore_hdr}</text>
 			</text>
 
@@ -66,7 +66,7 @@
 				<image resource="actionbar_sort"/>
 			</image>
 			
-			<!--button style="actionbar">
+			<button style="actionbar">
 				<condition var1="of_show_storage_selection" var2="1"/>
 				<placement x="%ab_btn2_x%" y="%ab_y%" placement="4"/>
 				<action function="page">restore</action>
@@ -81,23 +81,12 @@
 			<image>
 				<placement x="%ab_btn2_x%" y="%ab_y%" placement="4"/>
 				<image resource="actionbar_storage"/>
-			</image-->
+			</image>
 
 			
-			<button style="menu_btn">
-				<condition var1="of_show_storage_selection" op="!=" var2="1"/>
-				<placement x="336" y="%status_h%" w="408" h="168" />
-				<action function="set">of_show_storage_selection=1</action>
-			</button>
-			<button style="menu_btn">
-				<condition var1="of_show_storage_selection" var2="1"/>
-				<placement x="336" y="%status_h%" w="408" h="168" />
-				<action function="page">restore</action>
-			</button>
-
 			<button style="actionbar">
 				<condition var1="of_backup_empty" var2="0"/>
-				<placement x="%ab_back_x%" y="%ab_y%" placement="4"/>
+				<placement x="%ab_btn3_x%" y="%ab_y%" placement="4"/>
 				<action function="set">tw_back=restore</action>
 				<action function="set">tw_action_param=if [ -d "%tw_backups_folder%" ]; then rm -rf %tw_backups_folder%/*; fi;</action>
 				<action function="set">tw_text1={@backups_remove}</action>
@@ -107,7 +96,7 @@
 
 			<image>
 				<condition var1="of_backup_empty" var2="0"/>
-				<placement x="%ab_back_x%" y="%ab_y%" placement="4"/>
+				<placement x="%ab_btn3_x%" y="%ab_y%" placement="4"/>
 				<image resource="actionbar_delete"/>
 			</image>
 			
@@ -491,6 +480,7 @@
 
 		<page name="renamebackup">
 			<template name="base_ex_key"/>
+			<template name="keyboardtemplate"/>
 
 			<text style="text_ab_title">
 				<placement x="%col1_x_indent%" y="%ab_bc_y%"/>
@@ -498,22 +488,22 @@
 			</text>
 
 			<text style="text_ab_title">
-				<placement x="%col1_x_indent%" y="%row1_2_y%" placement="2"/>
+				<placement x="%col1_x_indent%" y="%row1_2_yb%" placement="2"/>
 				<text>{@rename_backup_hdr}</text>
 			</text>
 
 			<text style="text_ab_subtitle_lim">
-				<placement x="%col1_x_indent%" y="%row1_2_y%"/>
+				<placement x="%col1_x_indent%" y="%row1_2_yb%"/>
 				<text>%tw_restore_name%</text>
 			</text>
 
 			<text style="caption_hl">
-				<placement x="%col1_x_caption%" y="%row2_1a_y%"/>
+				<placement x="%col1_x_caption%" y="1270"/>
 				<text>{@name}</text>
 			</text>
 
 			<input>
-				<placement x="%col1_x_caption%" y="%row2_2a_y%" w="%input_w%" h="%input_height%"/>
+				<placement x="%col1_x_caption%" y="%row2_2a_yb%" w="%input_w%" h="%input_height%"/>
 				<text>%tw_backup_rename%</text>
 				<data name="tw_backup_rename"/>
 				<restrict minlen="1" maxlen="64" allow="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-_.{}[]() "/>
@@ -528,17 +518,17 @@
 
 			<fill color="%accent%">
 				<condition var1="tw_fileexists" var2="0"/>
-				<placement x="%col1_x_caption%" y="%row2_3a_y%" w="%input_w%" h="%input_line_height%" placement="1"/>
+				<placement x="%col1_x_caption%" y="%row2_3a_yb%" w="%input_w%" h="%input_line_height%" placement="1"/>
 			</fill>
 
 			<fill color="%text_fail%">
 				<condition var1="tw_fileexists" var2="1"/>
-				<placement x="%col1_x_caption%" y="%row2_3a_y%" w="%input_w%" h="%input_line_height%" placement="1"/>
+				<placement x="%col1_x_caption%" y="%row2_3a_yb%" w="%input_w%" h="%input_line_height%" placement="1"/>
 			</fill>
 
 			<text style="text_input_fail">
 				<condition var1="tw_fileexists" var2="1"/>
-				<placement x="%col1_x_caption%" y="%row3_1_y%"/>
+				<placement x="%col1_x_caption%" y="%row3_1_yb%"/>
 				<text>{@backup_name_exists}</text>
 			</text>
 

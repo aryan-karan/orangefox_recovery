@@ -89,7 +89,7 @@
 		</page>
 
 		<page name="formatdata">
-			<template name="body_key"/>
+			<template name="body_key0"/>
 			<template name="statusbarinfo"/>
 			<template name="tabs"/>
 			

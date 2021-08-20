@@ -65,7 +65,7 @@
 					<action function="page">fox_modules</action>
 				</listitem>
 				<listitem name="{@custom_settings}">
-					<condition var1="fileexists" var2="/sbin/maintainer.xml"/>
+					<condition var1="fileexists" op="=" var2="/sbin/maintainer.xml"/>
 					<icon res="maintainer"/>
 					<action function="page">maintainer</action>
 				</listitem>
@@ -203,7 +203,7 @@
 			</image>
 
 			<button style="actionbar">
-				<condition var1="of_flashlight_enable" var2="1"/>
+				<!--condition var1="of_flashlight_enable" var2="1"/-->
 				<condition var1="fox_use_pass" var2="1"/>
 				<placement x="%ab_btn2_x%" y="%ab_y%" placement="4"/>
 				<action function="set">pass_open=0</action>
@@ -211,7 +211,7 @@
 			</button>
 
 			<image>
-				<condition var1="of_flashlight_enable" var2="1"/>
+				<!--condition var1="of_flashlight_enable" var2="1"/-->
 				<condition var1="fox_use_pass" var2="1"/>
 				<placement x="%ab_btn2_x%" y="%ab_y%" placement="4"/>
 				<image resource="actionbar_encr_ena"/>
@@ -616,7 +616,7 @@
 			<terminal>
 				<condition var1="tw_hide_kb" var2="0"/>
 				<condition var1="key_numbar" op="!=" var2="1"/>
-				<placement x="%col1_x%" y="%terminal_y%" w="%terminal_width%" h="%terminal_height%"/>
+				<placement x="%col1_x%" y="%terminal_y0%" w="%terminal_width%" h="%terminal_height%"/>
 			</terminal>
 
 			<terminal>
@@ -627,11 +627,11 @@
 			<terminal>
 				<condition var1="tw_hide_kb" var2="0"/>
 				<condition var1="key_numbar" var2="1"/>
-				<placement x="%col1_x%" y="%terminal_y%" w="%terminal_width%" h="%terminal_num_height%"/>
+				<placement x="%col1_x%" y="%terminal_y9%" w="%terminal_width%" h="%terminal_num_height%"/>
 			</terminal>
 
 			<template name="navbar_bkg"/>
-			<template name="keyboardtemplate"/>
+			<template name="keyboardtemplate0"/>
 			<template name="keyboardterminaltemplate"/>
 
 			<template name="navbar_home"/>

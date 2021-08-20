@@ -397,6 +397,21 @@
 				</listitem>
 			</listbox>
 
+			<!-- Lock Option in settings header too -->
+			<button style="actionbar">
+				<condition var1="fox_use_pass" var2="1"/>
+				<placement x="%ab_btn1_x%" y="%ab_y%" placement="4"/>
+				<action function="set">pass_open=0</action>
+				<action function="page">main</action>
+			</button>
+
+			<image>
+				<condition var1="fox_use_pass" var2="1"/>
+				<placement x="%ab_btn1_x%" y="%ab_y%" placement="4"/>
+				<image resource="actionbar_encr_ena"/>
+			</image>
+			<!-- Lock Option in settings header ends -->
+
 			<template name="gestures"/>
 			
 			<action>

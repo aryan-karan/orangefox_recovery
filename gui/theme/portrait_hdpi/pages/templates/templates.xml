@@ -3,7 +3,7 @@
 	<templates>
 		<template name="files_qa_base">
 			<listbox style="btn_list">
-				<placement x="0" y="%ab_h%" w="%screen_w%" h="%fm_search_h%"/>
+				<placement x="0" y="%ab_hk%" w="%screen_w%" h="%fm_search_h%"/>
 				<listitem name="{@internal}">
 					<icon res="device"/>
 					<condition var1="fileexists" var2="/sdcard"/>
@@ -134,37 +134,37 @@
 			</text>
 			
 			<image>
-				<placement x="%col1_x%" y="%row1_1_y%"/>
+				<placement x="%col1_x%" y="%row1_1_yp%"/>
 				<image resource="icon_info"/>
 			</image>
 
 			<text style="text_body2_hl">
-				<placement x="%col1_x_indent%" y="%row1_1_y%"/>
+				<placement x="%col1_x_indent%" y="%row1_1_yp%"/>
 				<text>{@new_pass_info_1}</text>
 			</text>
 
 			<text style="text_body2_hl">
-				<placement x="%col1_x_indent%" y="%row1_2_y%"/>
+				<placement x="%col1_x_indent%" y="%row1_2_yb%"/>
 				<text>{@new_pass_info_2}</text>
 			</text>
 				
 			<text style="text_body2_hl">
-				<placement x="%col1_x_indent%" y="%row1_3_y%"/>
+				<placement x="%col1_x_indent%" y="%row1_3_yp%"/>
 				<text>{@new_pass_info_3}</text>
 			</text>
 				
 			<text style="text_body2_hl">
-				<placement x="%col1_x_indent%" y="%row2_1_y%"/>
+				<placement x="%col1_x_indent%" y="%row2_1_yp%"/>
 				<text>{@new_pass_info_4_2}</text>
 			</text>
 
 			<text style="caption_hl">
-				<placement x="%col1_x_caption%" y="%row2_3_y%"/>
+				<placement x="%col1_x_caption%" y="%row2_3_yb%"/>
 				<text>{@decrypt_data_enter_pass}</text>
 			</text>
 			
 			<fill color="%accent%">
-				<placement x="%col1_x_caption%" y="%row3_2_y%" w="%input_w%" h="%input_line_height%" placement="1"/>
+				<placement x="%col1_x_caption%" y="%row3_2_yp%" w="%input_w%" h="%input_line_height%" placement="1"/>
 			</fill>
 			
 			<action>
@@ -188,48 +188,48 @@
 			</text>
 			
 			<image>
-				<placement x="%col1_x%" y="%row1_1_y%"/>
+				<placement x="%col1_x%" y="%row1_1_yp%"/>
 				<image resource="icon_info"/>
 			</image>
 
 			<text style="text_body2_hl">
-				<placement x="%col1_x_indent%" y="%row1_1_y%"/>
+				<placement x="%col1_x_indent%" y="%row1_1_yp%"/>
 				<text>{@new_pass_info_1}</text>
 			</text>
 
 			<text style="text_body2_hl">
-				<placement x="%col1_x_indent%" y="%row1_2_y%"/>
+				<placement x="%col1_x_indent%" y="%row1_2_yb%"/>
 				<text>{@new_pass_info_2}</text>
 			</text>
 				
 			<text style="text_body2_hl">
-				<placement x="%col1_x_indent%" y="%row1_3_y%"/>
+				<placement x="%col1_x_indent%" y="%row1_3_yp%"/>
 				<text>{@new_pass_info_3}</text>
 			</text>
 				
 			<text style="text_body2_hl">
-				<placement x="%col1_x_indent%" y="%row2_1_y%"/>
+				<placement x="%col1_x_indent%" y="%row2_1_yp%"/>
 				<text>{@new_pass_info_4}</text>
 			</text>
 
 			<text style="caption_hl">
-				<placement x="%col1_x_caption%" y="%row2_3_y%"/>
+				<placement x="%col1_x_caption%" y="%row2_3_yb%"/>
 				<text>{@decrypt_data_enter_pass}</text>
 			</text>
 			
 			<fill color="%accent%">
 				<condition var1="pass_notm" var2="0"/>
-				<placement x="%col1_x_caption%" y="%row3_2_y%" w="%input_w%" h="%input_line_height%" placement="1"/>
+				<placement x="%col1_x_caption%" y="%row3_2_yp%" w="%input_w%" h="%input_line_height%" placement="1"/>
 			</fill>
 
 			<fill color="%text_fail%">
 				<condition var1="pass_notm" var2="1"/>
-				<placement x="%col1_x_caption%" y="%row3_2_y%" w="%input_w%" h="%input_line_height%" placement="1"/>
+				<placement x="%col1_x_caption%" y="%row3_2_yp%" w="%input_w%" h="%input_line_height%" placement="1"/>
 			</fill>
 
 			<text style="text_input_fail">
 				<condition var1="pass_notm" var2="1"/>
-				<placement x="%col1_x_caption%" y="%row3_2_y%"/>
+				<placement x="%col1_x_caption%" y="%row3_2_yp%"/>
 				<text>{@pass_not_match}</text>
 			</text>
 
@@ -278,50 +278,131 @@
 			</image>
 			
 			<image>
-				<placement x="%col1_x%" y="%row1_1_y%"/>
+				<placement x="%col1_x%" y="%row1_1_yp%"/>
 				<image resource="icon_info"/>
 			</image>
 
 			<text style="text_body2_hl">
-				<placement x="%col1_x_indent%" y="%row1_1_y%"/>
+				<placement x="%col1_x_indent%" y="%row1_1_yp%"/>
 				<text>{@locked_info_1}</text>
 			</text>
 
 			<text style="text_body2_hl">
-				<placement x="%col1_x_indent%" y="%row1_2_y%"/>
+				<placement x="%col1_x_indent%" y="%row1_2_yb%"/>
 				<text>{@locked_info_2}</text>
 			</text>
 				
 			<text style="text_body2_hl">
 				<condition var1="fox_pass_type" op="!=" var2="1"/>
-				<placement x="%col1_x_indent%" y="%row1_3_y%"/>
+				<placement x="%col1_x_indent%" y="%row1_3_yp%"/>
 				<text>{@locked_info_3}</text>
 			</text>
 				
 			<text style="text_body2_hl">
 				<condition var1="fox_pass_type" var2="1"/>
 				<condition var1="pass_not_match" op="!=" var2="1"/>
-				<placement x="%col1_x_indent%" y="%row1_3_y%"/>
+				<placement x="%col1_x_indent%" y="%row1_3_yp%"/>
 				<text>{@locked_info_3}</text>
 			</text>
 			
 			<text style="text_body2_hl">
 				<condition var1="fox_pass_type" op="!=" var2="1"/>
-				<placement x="%col1_x_indent%" y="%row2_1_y%"/>
+				<placement x="%col1_x_indent%" y="%row2_1_yp%"/>
 				<text>{@locked_info_4}</text>
 			</text>
 			
 			<text style="text_body2_hl">
 				<condition var1="fox_pass_type" var2="1"/>
 				<condition var1="pass_not_match" op="!=" var2="1"/>
-				<placement x="%col1_x_indent%" y="%row2_1_y%"/>
+				<placement x="%col1_x_indent%" y="%row2_1_yp%"/>
 				<text>{@locked_info_4_gk}</text>
 			</text>
 			
 			<text style="text_body2_fail">
 				<condition var1="fox_pass_type" var2="1"/>
 				<condition var1="pass_not_match" var2="1"/>
-				<placement x="%col1_x_indent%" y="%row2_1_y%"/>
+				<placement x="%col1_x_indent%" y="%row2_1_yp%"/>
+				<text>{@pass_not_match}</text>
+			</text>
+		</template>
+		
+		<template name="page_enter_passk">
+			<template name="body_nav"/>
+			<template name="ab_main"/>
+			<template name="statusbarinfo"/>
+
+			<text style="text_ab_title">
+				<placement x="%col1_x%" y="%ab_bc_y%"/>
+				<text>{@enter_password_restore}</text>
+			</text>
+
+			<button style="actionbar">
+				<condition var1="tw_reboot_poweroff" var2="1"/>
+				<placement x="%ab_btn1_x%" y="%ab_y%" placement="4"/>
+				<action function="set">tw_back=password_enter</action>
+				<action function="set">tw_action_param=poweroff</action>
+				<action function="page">rebootcheck</action>
+			</button>
+			
+			<button style="actionbar">
+				<condition var1="tw_reboot_poweroff" op="!=" var2="1"/>
+				<condition var1="tw_reboot_system" var2="1"/>
+				<placement x="%ab_btn1_x%" y="%ab_y%" placement="4"/>
+				<action function="set">tw_back=password_enter</action>
+				<action function="set">tw_action_param=system</action>
+				<action function="page">rebootcheck</action>
+			</button>
+
+			<image>
+				<placement x="%ab_btn1_x%" y="%ab_y%" placement="4"/>
+				<image resource="actionbar_power_off"/>
+			</image>
+			
+			<image>
+				<placement x="%col1_x%" y="%pattern_r1%"/>
+				<image resource="icon_info"/>
+			</image>
+
+			<text style="text_body2_hl">
+				<placement x="%col1_x_indent%" y="%pattern_r1%"/>
+				<text>{@locked_info_1}</text>
+			</text>
+
+			<text style="text_body2_hl">
+				<placement x="%col1_x_indent%" y="%pattern_r2%"/>
+				<text>{@locked_info_2}</text>
+			</text>
+				
+			<text style="text_body2_hl">
+				<condition var1="fox_pass_type" op="!=" var2="1"/>
+				<placement x="%col1_x_indent%" y="%pattern_r3%"/>
+				<text>{@locked_info_3}</text>
+			</text>
+				
+			<text style="text_body2_hl">
+				<condition var1="fox_pass_type" var2="1"/>
+				<condition var1="pass_not_match" op="!=" var2="1"/>
+				<placement x="%col1_x_indent%" y="%pattern_r3%"/>
+				<text>{@locked_info_3}</text>
+			</text>
+			
+			<text style="text_body2_hl">
+				<condition var1="fox_pass_type" op="!=" var2="1"/>
+				<placement x="%col1_x_indent%" y="%pattern_r4%"/>
+				<text>{@locked_info_4}</text>
+			</text>
+			
+			<text style="text_body2_hl">
+				<condition var1="fox_pass_type" var2="1"/>
+				<condition var1="pass_not_match" op="!=" var2="1"/>
+				<placement x="%col1_x_indent%" y="%pattern_r4%"/>
+				<text>{@locked_info_4_gk}</text>
+			</text>
+			
+			<text style="text_body2_fail">
+				<condition var1="fox_pass_type" var2="1"/>
+				<condition var1="pass_not_match" var2="1"/>
+				<placement x="%col1_x_indent%" y="%pattern_r4%"/>
 				<text>{@pass_not_match}</text>
 			</text>
 		</template>
@@ -330,12 +411,12 @@
 			<template name="page_enter_pass"/>
 			
 			<text style="caption_hl">
-				<placement x="%col1_x_caption%" y="%row2_3_y%"/>
+				<placement x="%col1_x_caption%" y="%row2_3_yb%"/>
 				<text>{@decrypt_data_enter_pass}</text>
 			</text>
 
 			<input>
-				<placement x="%col1_x_caption%" y="%row3_1_y%" w="%input_w%" h="%input_height%"/>
+				<placement x="%col1_x_caption%" y="%row3_1_yb%" w="%input_w%" h="%input_height%"/>
 				<text>%pass_enter_mask%</text>
 				<data name="pass_enter" mask="*" maskvariable="pass_enter_mask"/>
 				<restrict minlen="0" maxlen="64" />
@@ -344,17 +425,17 @@
 
 			<fill color="%accent%">
 				<condition var1="pass_not_match" var2="0"/>
-				<placement x="%col1_x_caption%" y="%row3_2_y%" w="%input_w%" h="%input_line_height%" placement="1"/>
+				<placement x="%col1_x_caption%" y="%row3_2_yp%" w="%input_w%" h="%input_line_height%" placement="1"/>
 			</fill>
 
 			<fill color="%text_fail%">
 				<condition var1="pass_not_match" var2="1"/>
-				<placement x="%col1_x_caption%" y="%row3_2_y%" w="%input_w%" h="%input_line_height%" placement="1"/>
+				<placement x="%col1_x_caption%" y="%row3_2_yp%" w="%input_w%" h="%input_line_height%" placement="1"/>
 			</fill>
 
 			<text style="text_input_fail">
 				<condition var1="pass_not_match" var2="1"/>
-				<placement x="%col1_x_caption%" y="%row3_2_y%"/>
+				<placement x="%col1_x_caption%" y="%row3_2_yp%"/>
 				<text>{@pass_not_match}</text>
 			</text>
 		</template>
@@ -627,7 +708,7 @@
 			<fileselector style="fileselector_b">
 				<condition var1="list_font" var2="1"/>
 				<condition var1="key_numbar" op="!=" var2="1"/>
-				<placement x="0" y="%ab_h%" w="%fileselector_width%" h="%fm_search_h%"/>
+				<placement x="0" y="%ab_hk%" w="%fileselector_width%" h="%fm_search_h%"/>
 				<sort name="tw_gui_sort_order"/>
 				<icon folder="folder_icon" file="file_icon" />
 				<filter name="tw_name_filter" folders="1" files="1" nav="0" extnvar="fm_type_sort"/>
@@ -640,7 +721,7 @@
 			<fileselector style="fileselector_s">
 				<condition var1="list_font" op="!=" var2="1"/>
 				<condition var1="key_numbar" op="!=" var2="1"/>
-				<placement x="0" y="%ab_h%" w="%fileselector_width%" h="%fm_search_h%"/>
+				<placement x="0" y="%ab_hk%" w="%fileselector_width%" h="%fm_search_h%"/>
 				<sort name="tw_gui_sort_order"/>
 				<icon folder="folder_icon_small" file="file_icon_small"/>
 				<filter name="tw_name_filter" folders="1" files="1" nav="0" extnvar="fm_type_sort"/>
@@ -653,7 +734,7 @@
 			<fileselector style="fileselector_b">
 				<condition var1="list_font" var2="1"/>
 				<condition var1="key_numbar" var2="1"/>
-				<placement x="0" y="%ab_h%" w="%fileselector_width%" h="%fm_search_num_h%"/>
+				<placement x="0" y="%ab_hk%" w="%fileselector_width%" h="%fm_search_num_h%"/>
 				<sort name="tw_gui_sort_order"/>
 				<icon folder="folder_icon" file="file_icon" />
 				<filter name="tw_name_filter" folders="1" files="1" nav="0" extnvar="fm_type_sort"/>
@@ -666,7 +747,7 @@
 			<fileselector style="fileselector_s">
 				<condition var1="list_font" op="!=" var2="1"/>
 				<condition var1="key_numbar" var2="1"/>
-				<placement x="0" y="%ab_h%" w="%fileselector_width%" h="%fm_search_num_h%"/>
+				<placement x="0" y="%ab_hk%" w="%fileselector_width%" h="%fm_search_num_h%"/>
 				<sort name="tw_gui_sort_order"/>
 				<icon folder="folder_icon_small" file="file_icon_small"/>
 				<filter name="tw_name_filter" folders="1" files="1" nav="0" extnvar="fm_type_sort"/>
@@ -848,7 +929,7 @@
 			</image>
 
 			<text style="text_body2_hl">
-				<placement x="%col1_x_indent%" y="%row2_1a_y%"/>
+				<placement x="%col1_x_indent%" y="1270"/>
 				<text>{@encrypt_data_part}</text>
 			</text>
 			
